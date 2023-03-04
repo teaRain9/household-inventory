@@ -1,6 +1,11 @@
 import Head from 'next/head'
+import {getUrgentItems} from "../../dummy-data";
+import ShoppingList from "@/components/shopping-list/shopping-list";
 
 function HomePage() {
+
+  const urgentItems = getUrgentItems();
+
   return (
     <>
       <Head>
@@ -10,7 +15,8 @@ function HomePage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Home page</h1>
+        <h1>Overview</h1>
+        <ShoppingList items={urgentItems}/>
       </main>
     </>
   )
