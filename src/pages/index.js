@@ -17,6 +17,7 @@ function HomePage() {
       <main>
         <h1>Overview</h1>
         <ShoppingList items={urgentItems}/>
+        
       </main>
     </>
   )
