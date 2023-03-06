@@ -1,8 +1,10 @@
 import Image from "next/image";
 import CheckIcon from "../icons/check";
 
+import classes from "./shoppingItem.module.css";
+import EditIcon from "@/components/icons/edit";
 
-function ShoppingItem({name, shopList, urgent}) {
+function ShoppingItem({ name, shopList, urgent }) {
   return (
     <div>
       <h2>{name}</h2>
@@ -13,7 +15,8 @@ function ShoppingItem({name, shopList, urgent}) {
           })}
         </ul>
         <div>
-          <CheckIcon/>
+          <CheckIcon />
+          <EditIcon />
           <button>Complete</button>
           <button>Delete</button>
         </div>

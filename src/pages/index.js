@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import {getUrgentItems} from "../../dummy-data";
 import ShoppingList from "@/components/shopping-list/shopping-list";
+import ShoppingItem from '@/components/shopping-list/shoppingItem';
 
 function HomePage() {
 
   const urgentItems = getUrgentItems();
+  first.forEach(second => {third})
 
   return (
     <>
