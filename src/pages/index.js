@@ -6,7 +6,6 @@ import ShoppingItem from '@/components/shopping-list/shoppingItem';
 function HomePage() {
 
   const urgentItems = getUrgentItems();
-  first.forEach(second => {third})
 
   return (
     <>

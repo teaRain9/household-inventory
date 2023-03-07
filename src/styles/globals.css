@@ -1,3 +1,7 @@
-.icon_sm {
-    width: 2rem;
+ul {
+    list-style: none;
+}
+
+.main {
+    margin-left: 18rem;
 }

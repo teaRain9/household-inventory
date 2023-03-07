@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+    margin-bottom: 1rem;
+    padding: 2rem;
+}
+
+.check_icon {
+ flex-grow: 1;
+}
+
+.title {
+    flex-grow: 10;
+}
+
+.shop_center {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 4;
+}
+
+.shop_center ul {
+    display: flex
+}
+
+.other_icon {
+    flex-grow: 2;
+}
