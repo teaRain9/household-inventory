@@ -1,10 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     font-family: 'Roboto', sans-serif;
-}
-ul {
-    list-style: none;
+    background-color: rgb(37, 12, 57) ;
 }
 
-.main {
-    margin-left: 18rem;
-}

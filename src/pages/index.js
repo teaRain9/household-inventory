@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import {getUrgentItems} from "../../dummy-data";
 import ShoppingList from "@/components/shopping-list/shopping-list";
-import ShoppingItem from '@/components/shopping-list/shoppingItem';
 
 function HomePage() {
 
@@ -15,11 +14,9 @@ function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1>Overview</h1>
-        <ShoppingList items={urgentItems}/>
-        
-      </main>
+        <div className=' mt-28'>
+          <ShoppingList items={urgentItems}/>
+        </div>
     </>
   )
 }
