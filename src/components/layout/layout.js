@@ -4,7 +4,7 @@ function Layout(props) {
     return (
       <Fragment>
         <MainHeader/>
-        <main class='main'>{props.children}</main>
+        <main className='main'>{props.children}</main>
       </Fragment>
     );
 }

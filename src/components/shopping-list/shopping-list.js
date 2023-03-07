@@ -4,9 +4,8 @@ function ShoppingList({items}) {
   return (
     <ul>
       {items.map((item) => (
-        <li>
+        <li key={item.id}>
           <ShoppingItem
-            key={item.id}
             name={item.name}
             shopList={item.shoppingCenter}
             urgent={item.isUrgent}

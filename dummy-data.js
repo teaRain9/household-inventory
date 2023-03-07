@@ -42,8 +42,8 @@ const DUMMY_ITEMS = [
     id: 'i1',
     name: 'Hot Sauce',
     shoppingCenter: [
-      DUMMY_SHOPS[0].name,
-      DUMMY_SHOPS[1].name,
+      DUMMY_SHOPS[0],
+      DUMMY_SHOPS[1],
     ],
     pool: 'shopping-list',
     user: DUMMY_USERS[0].userName,
@@ -53,8 +53,8 @@ const DUMMY_ITEMS = [
     id: 'i2',
     name: 'chicken breast',
     shoppingCenter: [
-      DUMMY_SHOPS[0].name,
-      DUMMY_SHOPS[4].name,
+      DUMMY_SHOPS[0],
+      DUMMY_SHOPS[4],
     ],
     pool: 'in-stock',
     user: DUMMY_USERS[0].userName,
@@ -65,8 +65,8 @@ const DUMMY_ITEMS = [
     id: 'i3',
     name: 'ground beef',
     shoppingCenter: [
-      DUMMY_SHOPS[1].name,
-      DUMMY_SHOPS[4].name,
+      DUMMY_SHOPS[1],
+      DUMMY_SHOPS[4],
     ],
     pool: 'shopping-list',
     user: DUMMY_USERS[1].userName,
@@ -76,8 +76,8 @@ const DUMMY_ITEMS = [
     id: 'i4',
     name: 'potato',
     shoppingCenter: [
-      DUMMY_SHOPS[0].name,
-      DUMMY_SHOPS[3].name,
+      DUMMY_SHOPS[0],
+      DUMMY_SHOPS[3],
     ],
     pool: 'shopping-list',
     user: DUMMY_USERS[0].userName,
@@ -87,8 +87,8 @@ const DUMMY_ITEMS = [
     id: 'i5',
     name: 'tomato',
     shoppingCenter: [
-      DUMMY_SHOPS[1].name,
-      DUMMY_SHOPS[2].name,
+      DUMMY_SHOPS[1],
+      DUMMY_SHOPS[2],
     ],
     pool: 'shopping-list',
     user: DUMMY_USERS[1].userName,
@@ -98,7 +98,7 @@ const DUMMY_ITEMS = [
     id: 'i6',
     name: 'bazooka',
     shoppingCenter: [
-      DUMMY_SHOPS[0].name,
+      DUMMY_SHOPS[0],
     ],
     pool: 'unassigned',
     user: DUMMY_USERS[0].userName,
@@ -108,7 +108,7 @@ const DUMMY_ITEMS = [
     id: 'i7',
     name: 'grenade',
     shoppingCenter: [
-      DUMMY_SHOPS[0].name,
+      DUMMY_SHOPS[0],
     ],
     pool: 'unassigned',
     user: DUMMY_USERS[1].userName,
@@ -118,8 +118,8 @@ const DUMMY_ITEMS = [
     id: 'i8',
     name: 'rice',
     shoppingCenter: [
-      DUMMY_SHOPS[1].name,
-      DUMMY_SHOPS[4].name,
+      DUMMY_SHOPS[1],
+      DUMMY_SHOPS[4],
     ],
     pool: 'in-stock',
     user: DUMMY_USERS[1].userName,
