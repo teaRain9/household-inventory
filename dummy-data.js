@@ -131,8 +131,8 @@ export function getAllItems() {
   return DUMMY_ITEMS;
 }
 
-export function getAllShoppingItems() {
-  return DUMMY_ITEMS.filter((item) => item.pool == 'shopping-list')
+export function getItemsByPool(pool) {
+  return DUMMY_ITEMS.filter((item) => item.pool == pool)
 }
 
 export function getUrgentItems() {

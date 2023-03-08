@@ -2,7 +2,7 @@ import ShoppingItem from "@/components/shopping-list/shoppingItem";
 
 function ShoppingList({items}) {
   return (
-    <ul>
+    <ul className=' mt-28'>
       {items.map((item) => (
         <li key={item.id}>
           <ShoppingItem

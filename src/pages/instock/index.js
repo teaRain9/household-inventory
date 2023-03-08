@@ -1,9 +1,9 @@
+import ShoppingList from "@/components/shopping-list/shopping-list";
+import { getItemsByPool } from "../../../dummy-data";
+
 function inStock() {
-  return (
-    <div>
-      <h1>List of available items page</h1>
-    </div>
-  )
+  const instockItems = getItemsByPool('in-stock');
+  return <ShoppingList items={instockItems}/>;
 }
 
 export default inStock;
