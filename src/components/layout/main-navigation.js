@@ -15,10 +15,6 @@ function MainNavigation() {
   return (
     <nav className=" bg-fuchsia-800 fixed bottom-0 w-full h-24">
       <ul className="flex justify-between flex-nowrap items-center w-full h-24 p-8 text-white">
-        <li>
-        <button onClick={activeCtx.onChangeCategory('home')}>click</button>
-
-        </li>
         <li className="flex-col justify-centercursor-pointer text-center">
           <Link href="/">
             <HomeIcon />

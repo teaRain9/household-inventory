@@ -6,12 +6,11 @@ const ActiveContext = React.createContext({
     onChangeCategory: () => {},
 })
 
-const ActiveContextProvider = (props) => {
+export const ActiveContextProvider = (props) => {
     const [activeCategory, setActiveCategory] = useState('Home')
 
     const changeCategoryHandler = (category) => {
         setActiveCategory(category);
-        console.log('context function')
     }
 
     return <ActiveContext.Provider value={
