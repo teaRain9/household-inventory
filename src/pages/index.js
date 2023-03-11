@@ -1,10 +1,16 @@
-import Head from 'next/head'
+import Head from "next/head";
 import {getUrgentItems} from "../../dummy-data";
 import ShoppingList from "@/components/shopping-list/shopping-list";
+import ActiveContext from '@/store/active-context';
+import { useEffect, useContext } from 'react';
 
 function HomePage() {
 
   const urgentItems = getUrgentItems();
+
+  const activeCtx = useContext(ActiveContext)
+
+  activeCtx.onChangeCategory("home")
 
 
 

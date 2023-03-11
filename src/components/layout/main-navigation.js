@@ -1,48 +1,55 @@
+import classes from './main-navigation.module.scss'
 import ActiveContext from "@/store/active-context";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import HomeIcon from "../icons/home";
 import InventoryIcon from "../icons/inventory";
 import MoreIcon from "../icons/more";
 import CreateNewIcon from "../icons/new";
 import ShoppingIcon from "../icons/shopping";
+import { useRouter } from 'next/router';
 
 function MainNavigation() {
 
   const activeCtx = useContext(ActiveContext);
 
+  const router = useRouter();
+
+  const activePath = router.asPath.slice(1);
+
+
 
   return (
-    <nav className=" bg-fuchsia-800 fixed bottom-0 w-full h-24">
-      <ul className="flex justify-between flex-nowrap items-center w-full h-24 p-8 text-white">
-        <li className="flex-col justify-centercursor-pointer text-center">
+    <nav className={classes.container}>
+      <ul>
+        <li className={activeCtx.category === 'home' ? classes.active : classes.inactive}>
           <Link href="/">
             <HomeIcon />
-            <p className=" text-xs pt-1">{activeCtx.category}</p>
+            {activeCtx.category !== 'home' && <p className=" text-xs pt-1">Home</p>}
           </Link>
         </li>
-        <li className="flex-col justify-centercursor-pointer text-center">
+        <li className={activeCtx.category === 'shopping-list' ? classes.active : classes.inactive}>
           <Link href="/shopping-list">
             <ShoppingIcon />
-            <p className=" text-xs pt-1">shopping list</p>
+            {activeCtx.category !== 'shopping-list' && <p className=" text-xs pt-1">Shopping List</p>}
           </Link>
         </li>
-        <li className="flex-col justify-centercursor-pointer text-center">
+        <li className={activeCtx.category === 'add-new' ? classes.active : classes.inactive}>
           <Link href="/add-new">
             <CreateNewIcon />
-            <p className=" text-xs pt-1">add new</p>
+            {activeCtx.category !== 'add-new' && <p className=" text-xs pt-1">Add New</p>}
           </Link>
         </li>
-        <li className="flex-col justify-centercursor-pointer text-center">
+        <li className={activeCtx.category === 'inventory' ? classes.active : classes.inactive}>
           <Link href="/instock">
             <InventoryIcon />
-            <p className=" text-xs pt-1">inventory</p>
+            {activeCtx.category !== 'inventory' && <p className=" text-xs pt-1">Inventory</p>}
           </Link>
         </li>
-        <li className="flex-col justify-centercursor-pointer text-center">
+        <li className={activeCtx.category === 'more' ? classes.active : classes.inactive}>
           <Link href="/setting">
             <MoreIcon />
-            <p className=" text-xs pt-1">more</p>
+            {activeCtx.category !== 'more' && <p className=" text-xs pt-1">More</p>}
           </Link>
         </li>
       </ul>
