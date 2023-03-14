@@ -1,5 +1,5 @@
 import ShoppingList from "@/components/shopping-list/shopping-list";
-import { getItemsByPool } from "../../../dummy-data";
+import { getItemsByPool } from "../../../data/dummy-data";
 
 import { useContext } from "react";
 import ActiveContext from "@/store/active-context";

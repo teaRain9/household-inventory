@@ -1,0 +1,25 @@
+{
+    "shops": [
+        {
+          "id": "s1",
+          "name": "Costco"
+        },
+        {
+        "id": "s2",
+        "name": "Walmart"
+        },
+        {
+        "id": "s3",
+        "name": "City Market"
+        },
+        {
+        "id": "s4",
+        "name": "Super Store"
+        },
+        {
+        "id": "s5",
+        "name": "Meat Shop"
+        }
+    ]
+
+}
