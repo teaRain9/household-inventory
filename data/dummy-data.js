@@ -46,7 +46,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[1],
     ],
     pool: 'shopping-list',
-    user: DUMMY_USERS[0].userName,
+    isChecked: false,
     isUrgent: false,
   },
   {
@@ -57,7 +57,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[4],
     ],
     pool: 'in-stock',
-    user: DUMMY_USERS[0].userName,
+    isChecked: false,
     isUrgent: true,
 
   },
@@ -69,7 +69,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[4],
     ],
     pool: 'shopping-list',
-    user: DUMMY_USERS[1].userName,
+    isChecked: false,
     isUrgent: true,
   },
   {
@@ -80,7 +80,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[3],
     ],
     pool: 'shopping-list',
-    user: DUMMY_USERS[0].userName,
+    isChecked: false,
     isUrgent: true,
   },
   {
@@ -91,7 +91,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[2],
     ],
     pool: 'shopping-list',
-    user: DUMMY_USERS[1].userName,
+    isChecked: false,
     isUrgent: false,
   },
   {
@@ -101,7 +101,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[0],
     ],
     pool: 'unassigned',
-    user: DUMMY_USERS[0].userName,
+    isChecked: false,
     isUrgent: false,
   },
   {
@@ -111,7 +111,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[0],
     ],
     pool: 'unassigned',
-    user: DUMMY_USERS[1].userName,
+    isChecked: false,
     isUrgent: false,
   },
   {
@@ -122,7 +122,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[4],
     ],
     pool: 'in-stock',
-    user: DUMMY_USERS[1].userName,
+    isChecked: false,
     isUrgent: false,
   },
 ]

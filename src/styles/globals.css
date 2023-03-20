@@ -5,5 +5,8 @@
 :root {
     font-family: 'Roboto', sans-serif;
     background-color: rgb(37, 12, 57) ;
+    max-width: 900px;
+    margin: auto;
+    border: solid 1px white;
 }
 

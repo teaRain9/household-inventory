@@ -2,26 +2,7 @@ import Head from "next/head";
 import {getUrgentItems} from "../../data/dummy-data";
 import ShoppingList from "@/components/shopping-list/shopping-list";
 import ActiveContext from '@/store/active-context';
-import { useEffect, useContext } from 'react';
-
-import fs from 'fs/promises'
-import path from "path";
-
-
-export async function getStaticProps(context) {
-  const filePath = path.join(process.cwd(), 'data', 'dummy-data.json')
-  const jsonData = await fs.readFile(filePath)
-  const data = JSON.parse(jsonData)
-  const { params } = context;
-  console.log({'params': params})
-
-  return {
-    props: {
-      shops: data.shops
-    },
-    revalidate: 10,
-  }
-}
+import { useContext } from 'react';
 
 function HomePage({shops}) {
 
@@ -40,11 +21,7 @@ function HomePage({shops}) {
       </Head>
         <div>
           <ShoppingList items={urgentItems}/>
-          <ul>
-            {shops.map(shop => {
-              return <li className="text-white" key={shop.id}>{shop.name}</li>
-            })}
-          </ul>
+
         </div>
     </>
   )
