@@ -23,6 +23,8 @@ function ShoppingItem({ name, shopList, urgent }) {
     return words.join(' ');
   }
 
+
+
   const leadingActions = () => (
     <LeadingActions>
       <SwipeAction onClick={() => console.info('swipe action triggered')}>
@@ -48,7 +50,7 @@ function ShoppingItem({ name, shopList, urgent }) {
 
   
   return (
-    <SwipeableList fullSwipe={true} threshold={true} >
+    <SwipeableList >
       <SwipeableListItem
       
         leadingActions={leadingActions()}
@@ -57,16 +59,14 @@ function ShoppingItem({ name, shopList, urgent }) {
         <div
           className={classes.container}
         >
-          <div className="grow-0">
+          <div className={classes.title}>
             <CheckboxIcon />
+            <h3>{toTitleCase(name)}</h3>
           </div>
-          <h3 className="grow">{toTitleCase(name)}</h3>
-          <ul className="flex  justify-start gap-4 grow">
-            {shopList.map((shop) => {
-              return <li key={shop.id}>{toTitleCase(shop.name)}</li>;
-            })}
-          </ul>
-          <div className="grow-0">
+          <div className={classes.shop_center}>
+            <p>{shopList.map(item => item.name).join('  |  ')}</p>
+          </div>
+          <div>
             <EditIcon />
           </div>
         </div>

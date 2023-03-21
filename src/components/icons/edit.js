@@ -9,6 +9,7 @@ function EditIcon() {
         stroke="currentColor"
         className="w-8 h-8"
         width="2rem"
+        style={{color: '#6db09e'}}
       >
         <path
           strokeLinecap="round"
