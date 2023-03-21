@@ -40,7 +40,7 @@ const DUMMY_SHOPS = [
 const DUMMY_ITEMS = [
   {
     id: 'i1',
-    name: 'Hot Sauce',
+    name: 'hot sauce',
     shoppingCenter: [
       DUMMY_SHOPS[0],
       DUMMY_SHOPS[1],

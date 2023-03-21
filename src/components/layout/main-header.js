@@ -1,6 +1,7 @@
 import ActiveContext from "@/store/active-context";
 import { useContext } from "react";
 import ProfileIcon from "../icons/profile";
+import MoreIcon from "../icons/more";
 
 import classes from './main-header.module.scss'
 
@@ -15,7 +16,9 @@ function MainHeader() {
               <div>
                 <h1 className="uppercase font-bold text-white text-2xl drop-shadow-sm">{header}</h1>
               </div>
-              <div className=" text-white text-2xl"><ProfileIcon /></div>
+              <div className="flex text-white text-2xl">
+                <ProfileIcon />
+              </div>
           </div>
 
       </div>

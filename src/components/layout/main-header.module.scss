@@ -1,4 +1,6 @@
+@import '/src/styles/variables.scss';
+
 .container {
     max-width: 900px;
-    background-color: #a54e76;
+    background-color: $primeColor;
 }

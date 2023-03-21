@@ -22,14 +22,8 @@ function MainNavigation() {
   return (
     <nav className={classes.container}>
       <ul>
-        <li className={activeCtx.category === 'home' ? classes.active : classes.inactive}>
-          <Link href="/">
-            <HomeIcon />
-            {activeCtx.category !== 'home' && <p className=" text-xs pt-1">Home</p>}
-          </Link>
-        </li>
         <li className={activeCtx.category === 'shopping-list' ? classes.active : classes.inactive}>
-          <Link href="/shopping-list">
+          <Link href="/">
             <ShoppingIcon />
             {activeCtx.category !== 'shopping-list' && <p className=" text-xs pt-1">Shopping List</p>}
           </Link>
@@ -46,12 +40,7 @@ function MainNavigation() {
             {activeCtx.category !== 'inventory' && <p className=" text-xs pt-1">Inventory</p>}
           </Link>
         </li>
-        <li className={activeCtx.category === 'more' ? classes.active : classes.inactive}>
-          <Link href="/setting">
-            <MoreIcon />
-            {activeCtx.category !== 'more' && <p className=" text-xs pt-1">More</p>}
-          </Link>
-        </li>
+
       </ul>
     </nav>
   );
