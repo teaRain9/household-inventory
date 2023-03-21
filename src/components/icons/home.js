@@ -7,7 +7,7 @@ function HomeIcon() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6 inline-block"
+        className="w-8 h-8 inline-block"
       >
         <path
           strokeLinecap="round"

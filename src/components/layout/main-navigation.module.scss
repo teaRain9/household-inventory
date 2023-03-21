@@ -1,5 +1,5 @@
 .container {
-    background-color: purple;
+    background-color: #a54e76;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -26,9 +26,10 @@
 }
 
 .active {
-    background-color: palevioletred;
+    background-color: #f0a3b4;
+    color: #a54e76;
 }
 
 .inactive {
-    background-color: purple;
+    background-color: #a54e76;
 }
