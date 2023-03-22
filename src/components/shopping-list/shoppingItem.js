@@ -12,8 +12,19 @@ import EditIcon from "@/components/icons/edit";
 import CheckboxIcon from "../icons/checkbox";
 
 import classes from './shoppingItem.module.scss'
+import { useContext, useState } from 'react';
+import SelectedItemsContext from '@/store/selectedItems-context';
 
-function ShoppingItem({ name, shopList, urgent }) {
+function ShoppingItem({ item }) {
+
+  const [itemChecked, setItemChecked] = useState(false)
+  const selItemCtx = useContext(SelectedItemsContext)
+
+  function toggleCheck() {
+    setItemChecked(prevState => (!prevState))
+    selItemCtx.OnAddItem(item)
+    console.log(selItemCtx.selectedItems)
+  }
 
   function toTitleCase(phrase) {
     let words = phrase.split(' ');
@@ -23,13 +34,11 @@ function ShoppingItem({ name, shopList, urgent }) {
     return words.join(' ');
   }
 
-
-
   const leadingActions = () => (
     <LeadingActions>
-      <SwipeAction onClick={() => console.info('swipe action triggered')}>
+      <SwipeAction onClick={toggleCheck}>
         <div className={classes.checked_action}>
-          <p>Checked</p>
+          <p>Done</p>
         </div>
       </SwipeAction>
     </LeadingActions>
@@ -50,7 +59,7 @@ function ShoppingItem({ name, shopList, urgent }) {
 
   
   return (
-    <SwipeableList >
+    <SwipeableList fullSwipe={false}>
       <SwipeableListItem
       
         leadingActions={leadingActions()}
@@ -60,11 +69,11 @@ function ShoppingItem({ name, shopList, urgent }) {
           className={classes.container}
         >
           <div className={classes.title}>
-            <CheckboxIcon />
-            <h3>{toTitleCase(name)}</h3>
+            <CheckboxIcon checked={itemChecked} toggleCheck={toggleCheck}/>
+            <h3>{toTitleCase(item.name)}</h3>
           </div>
           <div className={classes.shop_center}>
-            <p>{shopList.map(item => item.name).join('  |  ')}</p>
+            <p>{item.shoppingCenter.map(item => item.name).join('  |  ')}</p>
           </div>
           <div>
             <EditIcon />

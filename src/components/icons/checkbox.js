@@ -1,9 +1,13 @@
 import classes from './checkbox.module.scss'
 
-function CheckboxIcon() {
+import { useState } from 'react';
+
+function CheckboxIcon(props) {
+
+
   return (
     <div className={classes.checkbox_wrapper_31}>
-      <input  type="checkbox"/>
+      <input type="checkbox" onChange={props.toggleCheck} checked={props.checked} />
       <svg viewBox="0 0 35.6 35.6">
         <circle className={classes.background} cx="17.8" cy="17.8" r="17.8"></circle>
         <circle className={classes.stroke} cx="17.8" cy="17.8" r="14.37"></circle>

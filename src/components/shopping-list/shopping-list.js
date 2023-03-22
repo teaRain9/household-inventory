@@ -5,11 +5,7 @@ function ShoppingList({items}) {
     <ul className=' mt-28'>
       {items.map((item) => (
         <li key={item.id}>
-          <ShoppingItem
-            name={item.name}
-            shopList={item.shoppingCenter}
-            urgent={item.isUrgent}
-          />
+          <ShoppingItem item={item} />
         </li>
       ))}
     </ul>
