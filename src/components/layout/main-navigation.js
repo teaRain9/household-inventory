@@ -22,10 +22,10 @@ function MainNavigation() {
   return (
     <nav className={classes.container}>
       <ul>
-        <li className={activeCtx.category === 'shopping-list' ? classes.active : classes.inactive}>
+        <li className={activeCtx.category === 'home' ? classes.active : classes.inactive}>
           <Link href="/">
             <ShoppingIcon />
-            {activeCtx.category !== 'shopping-list' && <p className=" text-xs pt-1">Shopping List</p>}
+            {activeCtx.category !== 'home' && <p className=" text-xs pt-1">Shopping List</p>}
           </Link>
         </li>
         <li className={activeCtx.category === 'add-new' ? classes.active : classes.inactive}>
@@ -34,10 +34,10 @@ function MainNavigation() {
             {activeCtx.category !== 'add-new' && <p className=" text-xs pt-1">Add New</p>}
           </Link>
         </li>
-        <li className={activeCtx.category === 'inventory' ? classes.active : classes.inactive}>
+        <li className={activeCtx.category === 'in-stock' ? classes.active : classes.inactive}>
           <Link href="/instock">
             <InventoryIcon />
-            {activeCtx.category !== 'inventory' && <p className=" text-xs pt-1">Inventory</p>}
+            {activeCtx.category !== 'in-stock' && <p className=" text-xs pt-1">In Stock</p>}
           </Link>
         </li>
 

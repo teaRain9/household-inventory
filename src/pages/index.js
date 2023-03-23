@@ -2,13 +2,15 @@ import Head from "next/head";
 import {getItemsByPool} from "../../data/dummy-data";
 import ShoppingList from "@/components/shopping-list/shopping-list";
 import ActiveContext from '@/store/active-context';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 function HomePage() {
 
   const shoppingFilteredItems = getItemsByPool('shopping-list');
   const activeCtx = useContext(ActiveContext)
-  activeCtx.onChangeCategory("shopping-list")
+  useEffect(()=>{
+    activeCtx.onChangeCategory("home")
+  }, [])
 
 
   return (

@@ -7,7 +7,7 @@ const ActiveContext = React.createContext({
 })
 
 export const ActiveContextProvider = (props) => {
-    const [activeCategory, setActiveCategory] = useState('Home')
+    const [activeCategory, setActiveCategory] = useState('Shopping-List')
 
     const changeCategoryHandler = (category) => {
         setActiveCategory(category);

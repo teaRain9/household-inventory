@@ -12,7 +12,7 @@ import EditIcon from "@/components/icons/edit";
 import CheckboxIcon from "../icons/checkbox";
 
 import classes from './shoppingItem.module.scss'
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import SelectedItemsContext from '@/store/selectedItems-context';
 
 function ShoppingItem({ item }) {
@@ -20,10 +20,16 @@ function ShoppingItem({ item }) {
   const [itemChecked, setItemChecked] = useState(false)
   const selItemCtx = useContext(SelectedItemsContext)
 
+
+
   function toggleCheck() {
+    if(!itemChecked) {
+      selItemCtx.onAddItem(item)
+    } else {
+      selItemCtx.onRemoveItem(item.id)
+    }
     setItemChecked(prevState => (!prevState))
-    selItemCtx.OnAddItem(item)
-    console.log(selItemCtx.selectedItems)
+
   }
 
   function toTitleCase(phrase) {

@@ -1,10 +1,13 @@
 import ActiveContext from "@/store/active-context";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 function AddNewPage() {
 
     const activeCtx = useContext(ActiveContext)
-    activeCtx.onChangeCategory("add-new")
+
+    useEffect(()=>{
+      activeCtx.onChangeCategory("add-new")
+    }, [])
   
 
     return (

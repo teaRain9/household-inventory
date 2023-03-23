@@ -1,0 +1,18 @@
+@import '/src/styles/variables.scss';
+
+.container {
+    margin-top: 7rem;
+    .shopping_list {
+        margin-top: 1rem;
+    }
+    .button_section {
+        .button {
+            background-color: $secondColor;
+            color: white;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 100%;
+        }
+    }
+}
+
