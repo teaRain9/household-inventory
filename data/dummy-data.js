@@ -37,6 +37,50 @@ const DUMMY_SHOPS = [
 
 ]
 
+const DUMMY_CATEGORIES = [
+  {
+    id: 'c1',
+    name: 'dairy'
+  },
+  {
+    id: 'c2',
+    name: 'produce'
+  },
+  {
+    id: 'c3',
+    name: 'meat'
+  },
+  {
+    id: 'c4',
+    name: 'personal care'
+  },
+  {
+    id: 'c5',
+    name: 'household'
+  },
+  {
+    id: 'c6',
+    name: 'bakery'
+  },
+  {
+    id: 'c7',
+    name: 'bevrages'
+  },
+  {
+    id: 'c8',
+    name: 'condiment'
+  },
+  {
+    id: 'c9',
+    name: 'pasta'
+  },
+  {
+    id: 'c10',
+    name: 'snacks'
+  },
+
+]
+
 const DUMMY_ITEMS = [
   {
     id: 'i1',
@@ -46,7 +90,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[1],
     ],
     pool: 'shopping-list',
-    isChecked: false,
+    category: 'c8',
     isUrgent: false,
   },
   {
@@ -57,7 +101,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[4],
     ],
     pool: 'in-stock',
-    isChecked: false,
+    category: 'c3',
     isUrgent: true,
 
   },
@@ -69,7 +113,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[4],
     ],
     pool: 'shopping-list',
-    isChecked: false,
+    category: 'c3',
     isUrgent: true,
   },
   {
@@ -80,7 +124,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[3],
     ],
     pool: 'shopping-list',
-    isChecked: false,
+    category: 'c2',
     isUrgent: true,
   },
   {
@@ -91,7 +135,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[2],
     ],
     pool: 'shopping-list',
-    isChecked: false,
+    category: 'c2',
     isUrgent: false,
   },
   {
@@ -101,7 +145,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[0],
     ],
     pool: 'unassigned',
-    isChecked: false,
+    category: 'c5',
     isUrgent: false,
   },
   {
@@ -111,7 +155,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[0],
     ],
     pool: 'unassigned',
-    isChecked: false,
+    category: 'c5',
     isUrgent: false,
   },
   {
@@ -122,7 +166,7 @@ const DUMMY_ITEMS = [
       DUMMY_SHOPS[4],
     ],
     pool: 'in-stock',
-    isChecked: false,
+    category: 'c9',
     isUrgent: false,
   },
 ]
