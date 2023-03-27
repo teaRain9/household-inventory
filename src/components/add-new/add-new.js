@@ -32,13 +32,13 @@ export default function AddNew() {
   return (
     <form className={classes.container} onSubmit={addToItemsHandler}>
 
-      <h2 className={classes.title}>Name:</h2>
-      <div className={classes.name_input}>
+      <fieldset className={classes.name_input}>
+        <legend className={classes.title}>Name:</legend>
         <input ref={nameRef} type="text" id="item-name" placeholder='Item Name:'/>
-      </div>
+      </fieldset>
 
-      <h2 className={classes.title}>Available in:</h2>
-      <div className={classes.selection}>
+      <fieldset className={classes.selection}>
+        <legend className={classes.title}>Available in:</legend>
         <div>
           <input type="checkbox" name='shopping-center' id='costco' value='costco' onChange={shopChangeHandler}/>
           <label htmlFor="costco"> Costco</label>
@@ -51,10 +51,10 @@ export default function AddNew() {
           <input type="checkbox" name='shopping-center' id='meat-shop' value='meat-shop' onChange={shopChangeHandler}/>
           <label htmlFor="meat-shop"> Meat Shop</label>
         </div>
-      </div>
+      </fieldset>
 
-      <h2 className={classes.title}>Category:</h2>
-      <div className={classes.selection}>
+      <fieldset className={classes.selection}>
+        <legend className={classes.title}>Category:</legend>
         <div>
           <input type="radio" name='pool' id='dairy' value='dairy' onChange={e => setCategory(e.target.value)}/>
           <label htmlFor="dairy">Dairy</label>
@@ -67,10 +67,10 @@ export default function AddNew() {
           <input type="radio" name='pool' id='grain' value='grain' onChange={e => setCategory(e.target.value)}/>
           <label htmlFor="grain">Grain</label>
         </div>
-      </div>
+      </fieldset>
 
-      <h2 className={classes.title}>Assigned to:</h2>
-      <div className={classes.selection}>
+      <fieldset className={classes.selection}>
+        <legend className={classes.title}>Assigned to:</legend>
         <div>
           <input type="radio" name='pool' id='none' value='none' onChange={e => setPool(e.target.value)}/>
           <label htmlFor="none">None </label>
@@ -83,10 +83,10 @@ export default function AddNew() {
           <input type="radio" name='pool' id='inventory' value='inventory' onChange={e => setPool(e.target.value)}/>
           <label htmlFor="inventory">Inventory </label>
         </div>
-      </div>
-      <div className={classes.submit}>
+      </fieldset>
+      <fieldset className={classes.submit}>
         <button className={classes.button}>Add</button>
-      </div>
+      </fieldset>
 
     </form>
   )
