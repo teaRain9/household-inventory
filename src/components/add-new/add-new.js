@@ -56,15 +56,15 @@ export default function AddNew() {
       <fieldset className={classes.selection}>
         <legend className={classes.title}>Category:</legend>
         <div>
-          <input type="radio" name='pool' id='dairy' value='dairy' onChange={e => setCategory(e.target.value)}/>
+          <input type="radio" name='category' id='dairy' value='dairy' onChange={e => setCategory(e.target.value)}/>
           <label htmlFor="dairy">Dairy</label>
         </div>
         <div>
-          <input type="radio" name='pool' id='produce' value='produce' onChange={e => setCategory(e.target.value)}/>
+          <input type="radio" name='category' id='produce' value='produce' onChange={e => setCategory(e.target.value)}/>
           <label htmlFor="produce">Produce</label>
         </div>
         <div>
-          <input type="radio" name='pool' id='grain' value='grain' onChange={e => setCategory(e.target.value)}/>
+          <input type="radio" name='category' id='grain' value='grain' onChange={e => setCategory(e.target.value)}/>
           <label htmlFor="grain">Grain</label>
         </div>
       </fieldset>
