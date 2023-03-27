@@ -1,5 +1,6 @@
 import ActiveContext from "@/store/active-context";
 import { useContext, useEffect } from "react";
+import AddNew from "@/components/add-new/add-new";
 
 function AddNewPage() {
 
@@ -10,11 +11,7 @@ function AddNewPage() {
     }, [])
   
 
-    return (
-      <div className="mt-28"> 
-        <h1 className="text-white">Add new shopping item</h1>
-      </div>
-    ); 
+    return <AddNew/>;
 }
 
 export default AddNewPage;
