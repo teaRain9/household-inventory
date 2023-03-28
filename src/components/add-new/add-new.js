@@ -8,6 +8,27 @@ export default function AddNew() {
   const [shop, setShop] = useState([])
   const [category, setCategory] = useState([])
 
+  const actionType = {
+    updateField: 'UPDATE_FIELD',
+    validate: 'VALIDATE_FORM'
+  }
+
+
+  function formReducer(state, action) {
+    switch (action.type) {
+      case 'UPDATE_FIELD':
+        return { ...state, [action.fieldName] : action.fieldValue };
+      case 'VALIDATE_FORM':
+        const errors = {};
+
+        if(!state.name) {
+          errors.name = 'Please Enter A Name!'
+        } else if(state.name.length < 3) {
+          errors. name = 'Name has be at least 3 characters long!'
+
+    }
+  }
+
   function shopChangeHandler(e) {
     const {checked, value} = e.target;
     if(checked) {
