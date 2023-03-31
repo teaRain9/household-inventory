@@ -1,18 +1,36 @@
 import classes from './add-new.module.scss'
-import {useReducer, useRef, useState} from "react";
+import {useReducer} from "react";
+
+
+function formReducer(state, action) {
+  switch (action.type) {
+    case 'SET_NAME':
+      return { ...state, name : action.value };
+    case 'UPDATE_SHOP':
+      if(action.checked) {
+        return{...state, shoppingCenter: [...state.shoppingCenter, action.value]}
+      } else {
+        return{...state, shoppingCenter: state.shoppingCenter.filter(item => item !== action.value)}
+      }
+    case 'UPDATE_CATEGORY':
+      return {...state, category: action.value}
+    case 'SET_POOL': 
+      return {...state, pool: action.value}
+    default:
+        return{...state}
+  }
+}
 
 export default function AddNew() {
 
-  const [pool, setPool] = useState('none')
-  const [category, setCategory] = useState([])
   const [formState, formDispatch] = useReducer(formReducer, 
     { name: '',
       nameValid: true,
       shoppingCenter: [],
       shoppingCenterIsValid: true,
-      category: [],
+      category: '',
       categoryIsValid: true,
-      pool: '',
+      pool: 'none',
       formIsValid: true
     })
 
@@ -22,31 +40,6 @@ export default function AddNew() {
     updateCat: 'UPDATE_CATEGORY',
     setPool: 'SET_POOL',
   }
-
-  function formReducer(state, action) {
-    switch (action.type) {
-      case 'SET_NAME':
-        return { ...state, name : action.value };
-      case 'UPDATE_SHOP':
-        if(action.checked) {
-          return{...state, shoppingCenter: [...state.shoppingCenter, action.value]}
-        } else {
-          return{...state, shoppingCenter: state.shoppingCenter.filter(item => item !== action.value)}
-        }
-      case 'UPDATE_CATEGORY':
-        return {...state, category: action.value}
-      case 'UPDATE_POOL': 
-        return {...state, pool: action.value}
-
-    }
-  }
-
-
-  function shopChangeHandler(e) {
-    const {checked, value} = e.target;
-    formDispatch({type: ACTION.updateShop, checked, value})
-  }
-
 
   function addToItemsHandler(event) {
     event.preventDefault();
@@ -68,7 +61,11 @@ export default function AddNew() {
         />
       </fieldset>
 
-      <fieldset className={classes.selection}>
+      <fieldset className={classes.selection}
+                onChange={(e) => 
+                  formDispatch({type: ACTION.updateShop, checked: e.target.checked, value: e.target.value})
+              }
+                >
         <legend className={classes.title}>Available in:</legend>
         <div>
           <input
@@ -76,7 +73,6 @@ export default function AddNew() {
             name="shoppingCenter"
             id="costco"
             value="costco"
-            onChange={shopChangeHandler}
           />
           <label htmlFor="costco"> Costco</label>
         </div>
@@ -86,7 +82,6 @@ export default function AddNew() {
             name="shoppingCenter"
             id="walmart"
             value="walmart"
-            onChange={shopChangeHandler}
           />
           <label htmlFor="walmart"> Walmart</label>
         </div>
@@ -96,13 +91,16 @@ export default function AddNew() {
             name="shoppingCenter"
             id="meat-shop"
             value="meat-shop"
-            onChange={shopChangeHandler}
           />
           <label htmlFor="meat-shop"> Meat Shop</label>
         </div>
       </fieldset>
 
-      <fieldset className={classes.selection}>
+      <fieldset className={classes.selection}
+                onChange={(e) =>
+                formDispatch({ type: ACTION.updateCat, value: e.target.value })
+                }
+            >
         <legend className={classes.title}>Category:</legend>
         <div>
           <input
@@ -110,7 +108,6 @@ export default function AddNew() {
             name="category"
             id="dairy"
             value="dairy"
-            onChange={(e) => setCategory(e.target.value)}
           />
           <label htmlFor="dairy">Dairy</label>
         </div>
@@ -120,10 +117,7 @@ export default function AddNew() {
             name="category"
             id="produce"
             value="produce"
-            onChange={(e) =>
-              formDispatch({ type: ACTION.updateCat, value: e.target.value })
-            }         
-            />
+          />
           <label htmlFor="produce">Produce</label>
         </div>
         <div>
@@ -132,15 +126,16 @@ export default function AddNew() {
             name="category"
             id="grain"
             value="grain"
-            onChange={(e) =>
-              formDispatch({ type: ACTION.updateCat, value: e.target.value })
-            }         
           />
           <label htmlFor="grain">Grain</label>
         </div>
       </fieldset>
 
-      <fieldset className={classes.selection}>
+      <fieldset className={classes.selection}            
+            onChange={(e) =>
+              formDispatch({ type: ACTION.setPool, value: e.target.value })
+            }
+      >
         <legend className={classes.title}>Assigned to:</legend>
         <div>
           <input
@@ -148,8 +143,7 @@ export default function AddNew() {
             name="pool"
             id="none"
             value="none"
-            checked={pool === "none"}
-            onChange={(e) => setPool(e.target.value)}
+            defaultChecked
           />
           <label htmlFor="none">None </label>
         </div>
@@ -159,7 +153,6 @@ export default function AddNew() {
             name="pool"
             id="shopping-list"
             value="shopping-list"
-            onChange={(e) => setPool(e.target.value)}
           />
           <label htmlFor="shopping-list">Shopping List </label>
         </div>
@@ -169,7 +162,6 @@ export default function AddNew() {
             name="pool"
             id="inventory"
             value="inventory"
-            onChange={(e) => setPool(e.target.value)}
           />
           <label htmlFor="inventory">Inventory </label>
         </div>
